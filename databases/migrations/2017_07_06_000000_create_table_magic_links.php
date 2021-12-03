@@ -16,7 +16,7 @@ class CreateTableMagicLinks extends Migration
         Schema::create(config('magiclink.magiclink_table', 'magic_links'), function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('token', 255);
-            $table->text('action');
+            $table->longText('action');
             $table->unsignedTinyInteger('num_visits')->default(0);
             $table->unsignedTinyInteger('max_visits')->nullable();
             $table->timestamp('available_at')->nullable();
